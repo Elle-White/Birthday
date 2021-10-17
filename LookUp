@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONObject;
 import java.util.Scanner;
 
-public class LookUpBirthday {
+public class birthdayName {
 
     //
     // Func: ReadJSONFile
@@ -48,11 +48,14 @@ public class LookUpBirthday {
         //
         // how to read user input from keyboard
         //
+        
         System.out.println("Reading user input into a string");
 
         // get user input
         Scanner input = new Scanner(System.in);
+        
         System.out.print("Enter a name:");
+        
         String name = input.nextLine();
 
         // print user input
@@ -78,16 +81,24 @@ public class LookUpBirthday {
 
         // loop over list
         String birthday;
+        
         JSONObject obj;
+        
         for (Integer i = 0; i < jsonData.size() ; i++) {
+            
             // parse the object and pull out the name and birthday
             obj = (JSONObject) jsonData.get(i);
+            
             birthday = (String) obj.get("birthday");
+            
             name = (String) obj.get("name");
+            
             System.out.println("name = " + name);
+            
             System.out.println("birthday = " + birthday);
         }
     }
 
 }
+
 
